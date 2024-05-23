@@ -1,0 +1,83 @@
+.booking {
+    &__text {
+        font-size: 1.2rem;
+        animation: fade-in 1s ease-in forwards;
+
+        &-col {
+            width: 30vw;
+            margin-right: 4rem;
+        }
+    }
+
+    &__title {
+        animation: fade-in 1s ease-in forwards;
+        // font-weight: normal;
+    }
+
+
+    &__subtitle {
+        margin: 0;
+        animation: fade-in 1s ease-in forwards;
+        font-weight: normal;
+    }
+
+    &__form {
+        margin: 1rem;
+        width: 20vw;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        &-title {
+            margin: 0 0 1rem 0;
+            font-weight: normal;
+        }
+
+        &-container {
+            border: 1px solid rgba(0, 0, 0, 0.078);
+            box-shadow: .5rem 1rem 2rem rgba(0, 0, 0, 0.196);
+            border-radius: 1rem;
+            margin-bottom: 4rem;
+            animation: fade-in-up 1s ease-in forwards;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        &-datepicker {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+
+    &__confirmed {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+
+        &-service {
+            margin: 0;
+        }
+    }
+
+    &__ok {
+        height: 3rem;
+    }
+
+    &__price-list {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0;
+        gap: 1rem;
+    }
+
+    &__price-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+    }
+}

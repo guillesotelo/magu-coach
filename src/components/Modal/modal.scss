@@ -1,0 +1,193 @@
+.modal {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 150vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        background-color: transparent;
+        z-index: 3;
+        align-self: center !important;
+        justify-self: center !important;
+        animation: fade-in-down .2s ease-in forwards;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        min-width: 30vw;
+        max-height: 85vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px solid lightgray;
+        border-radius: 1rem;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.219);
+        position: fixed;
+        overflow: hidden;
+
+        &--dark {
+            display: flex;
+            flex-direction: column;
+            background-color: #000000;
+            min-width: 30vw;
+            max-height: 85vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border: 1px solid #424244;
+            border-radius: 1rem;
+            position: fixed;
+            overflow: hidden;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 1rem 1rem 0 1rem;
+        border-radius: 1rem;
+    }
+
+    &__titles {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__logo-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    &__title {
+        font-weight: normal;
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    &__subtitle {
+        font-weight: normal;
+        margin: 0;
+        font-size: .9rem;
+    }
+
+    &__close {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        margin: 0;
+        font-size: 1.2rem;
+        transition: .3s;
+        padding: 0;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .2rem .4rem;
+        border-radius: .5rem;
+        color: gray;
+
+        &:hover {
+            border: 1px solid gray;
+        }
+
+        &--dark {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            margin: 0;
+            font-size: 1.2rem;
+            transition: .3s;
+            padding: 0;
+            color: gray;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .2rem .4rem;
+            border-radius: .5rem;
+
+            &:hover {
+                border: 1px solid gray;
+            }
+        }
+    }
+
+    &__content {
+        padding: 1rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+.home__modal {
+    &-wrapper {
+        height: 100vh;
+        width: 100vw;
+        background-color: transparent;
+        z-index: 5;
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        background-color: white;
+        border: 1px solid rgb(237, 237, 237);
+        border-radius: 1vw;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.417);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 2vw;
+        // overflow: auto;
+        max-width: 90vw;
+        max-height: 85vh;
+    }
+
+    &-close {
+        font-size: 1.2vw;
+        font-weight: normal;
+        color: gray;
+        position: absolute;
+        margin: 0;
+        right: 0;
+        cursor: pointer;
+        margin: -1vw 1.1vw;
+        transition: .3s;
+        font-family: Arial, Helvetica, sans-serif !important;
+
+        &:hover {
+            color: #EBD28D;
+        }
+    }
+
+    &-image {
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .modal {
+        &__container {
+            min-width: 90vw;
+            width: 90vw;
+            max-height: 70vh;
+
+            &--dark {
+                min-width: 90vw;
+                max-height: 70vh;
+            }
+        }
+    }
+}

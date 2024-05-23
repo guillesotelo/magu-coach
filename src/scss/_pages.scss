@@ -1,0 +1,60 @@
+@import '../pages/Home/home.scss';
+@import '../pages/Login/login.scss';
+@import '../pages/NewBooking/newbooking.scss';
+@import '../pages/Bookings/bookings.scss';
+
+.page {
+
+    &__title {
+        font-weight: normal;
+        margin: 2rem;
+    }
+
+    &__container {
+        margin: 3rem 0 8rem;
+    }
+
+    &__centered {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10vh 0;
+        min-height: 100vh;
+    }
+
+    &__header {
+        &-title {
+            font-weight: normal;
+            width: 82vw;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        margin-top: 10vh;
+        min-height: 90vh;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .page {
+        &__row {}
+    }
+}

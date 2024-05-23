@@ -1,0 +1,192 @@
+.whatsapp {
+    &__container {
+        height: 35rem;
+        width: 24rem;
+        background-color: white;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        animation: popup-chat .5s ease-in forwards;
+        position: relative;
+        box-shadow: .2rem .2rem 2rem rgba(0, 0, 0, 0.231);
+    }
+
+    &__box {
+        height: 100%;
+        background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
+        background-size: contain;
+        overflow: hidden;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #006257;
+
+        &-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: .3rem 0;
+        }
+
+        &-goback {
+            margin-left: .5rem;
+            height: 2rem;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(131deg) brightness(103%) contrast(101%);
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
+
+        &-img {
+            height: 2.5rem;
+            border-radius: 50%;
+        }
+
+        &-text {
+            margin: .5rem;
+        }
+
+        &-name {
+            margin: 0;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        &-status {
+            margin: 0;
+            font-style: italic;
+            color: #cecece;
+        }
+
+        &-options {
+            margin-right: .5rem;
+            height: 1.5rem;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(131deg) brightness(103%) contrast(101%);
+            cursor: default;
+        }
+    }
+
+    &__chat {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-bottom: 4rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 20rem;
+
+        &-message {
+            background-color: #E3FFC7;
+            width: 80%;
+            margin: 1rem 1rem 0 1rem;
+            border-radius: .5rem;
+            border-top-right-radius: 0;
+            position: relative;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.117);
+
+            &-text {
+                margin: .7rem;
+                overflow-wrap: break-word;
+            }
+
+            &-status {
+                position: absolute;
+                bottom: .1rem;
+                right: .2rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin: 0;
+                font-size: .7rem;
+                color: #797979bc;
+                height: 1rem;
+            }
+
+            &-time {
+                margin: 0 .2rem;
+            }
+
+            &-check {
+                height: 1.2rem;
+                opacity: .4;
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        position: absolute;
+        width: 100%;
+        height: 10vh;
+        bottom: .5rem;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 1rem;
+        overflow: hidden;
+        height: 4rem;
+        width: 18rem;
+
+        &-emojis {
+            height: 2rem;
+            margin: 0 .5rem;
+            filter: invert(79%) sepia(0%) saturate(388%) hue-rotate(134deg) brightness(98%) contrast(87%);
+        }
+
+        &-box {
+            height: 3rem;
+            width: 100%;
+            font-size: 1rem;
+            resize: none;
+            border: none;
+            outline: none;
+            margin: .3rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+
+            &:active {
+                border: none;
+            }
+        }
+    }
+
+    &__send {
+        &-container {
+            background-color: #006257;
+            width: 3.2rem;
+            height: 3.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
+
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+
+        &-svg {
+            height: 1.6rem;
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(131deg) brightness(103%) contrast(101%);
+        }
+    }
+}

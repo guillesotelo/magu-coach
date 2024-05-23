@@ -1,0 +1,27 @@
+@import 'components';
+@import 'pages';
+@import 'animations';
+
+abbr {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: .4rem;
+  height: .4rem;
+  border-radius: .3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6575A8;
+  border-radius: .2rem;
+}
+
+.close-animation {
+  animation: close-animation .2s ease-in forwards !important;
+}
+
+ul {
+  list-style: none;
+}
