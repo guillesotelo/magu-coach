@@ -27,7 +27,7 @@ export default function Home({ }: Props) {
         <div className='home__container' style={{ backgroundImage: `url(${BG})` }}>
 
           <div className="home__section-wrap">
-          <h2 className='page__title'>Servicios</h2>
+            <h2 className='page__title'>Servicios</h2>
             <ServiceCard
               image='https://www.danielalencina.com/wp-content/uploads/2019/07/coaching-ontologico-1.jpg'
               title='Coaching Ontológico'
@@ -36,6 +36,15 @@ export default function Home({ }: Props) {
               handleButton={() => history.push('/new-booking?serviceId=664efdab7bd965baf98c585f')}
               delay='1s'
               handleReadMore={() => history.push('/services?serviceId=coaching-ontologico')}
+            />
+            <ServiceCard
+              image='https://eduka.occidente.co/wp-content/uploads/2022/10/Ventajas-de-la-carrera-de-Fonoaudiologia.jpg'
+              title='Fonoaudiología'
+              description='La fonoaudiología es una disciplina de la salud que estudia la comunicación humana y la discapacidad comunicativa, reconociendo los factores individuales, interpersonales y sociales de los individuos. Sus actividades no solo están centradas en identificar y tratar las deficiencias de los pacientes, sino también en la creación de métodos para la rehabilitación de las capacidades comunicativas del individuo. De igual forma, interviene en los procesos de prevención de dichas deficiencias y en la promoción del bienestar comunicativo, de la calidad de vida y de la inclusión social de las comunidades, poblaciones y sujetos.'
+              buttonLabel='Reservar'
+              handleButton={() => history.push('/new-booking?serviceId=664f21e7067722000c2aa2a4')}
+              delay='1.5s'
+              handleReadMore={() => history.push('/services?serviceId=fonoaudiologia')}
             />
           </div>
         </div>
