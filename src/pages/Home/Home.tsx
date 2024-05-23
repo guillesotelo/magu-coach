@@ -21,10 +21,10 @@ export default function Home({ }: Props) {
     setTimeout(() => setShowWhatsapp(true), 3000)
   }, [])
 
-  const renderDesktop = () => {
+  const renderHome = () => {
     return (
       <div className='page__row'>
-        <div className='home__container' style={{ backgroundImage: `url(${BG})` }}>
+        <div className='home__container' style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover' }}>
 
           <div className="home__section-wrap">
             <h2 className='page__title'>Servicios</h2>
@@ -62,13 +62,5 @@ export default function Home({ }: Props) {
     )
   }
 
-  const renderMobile = () => {
-    return (
-      <div className='page__row'>
-
-      </div>
-    )
-  }
-
-  return isMobile ? renderMobile() : renderDesktop()
+  return renderHome()
 }

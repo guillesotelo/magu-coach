@@ -226,3 +226,32 @@
     opacity: 0;
     transition: .5s;
 }
+
+@media only screen and (max-width: 640px) {
+    .booking {
+        &__row {
+            flex-direction: column;
+            width: 80vw
+        }
+
+        &__col {
+            flex-direction: column;
+            width: 80vw
+        }
+
+        &__btns {
+            flex-direction: column;
+        }
+
+        &__sidebar-event {
+            width: 80vw;
+            position: absolute;
+            background-color: #fff;
+            // z-index: 3;
+            margin-top: 0;
+            &-row{
+                flex-direction: column;
+            }
+        }    
+    }
+}

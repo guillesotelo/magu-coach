@@ -1,7 +1,7 @@
 .home {
     &__container {
         position: relative;
-        height: 100vh;
+        height: 90vh;
         width: 100%;
     }
 
@@ -161,6 +161,61 @@
 
         &-box {
             animation: fade-in-up 2s ease-in-out forwards;
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .home {
+        &__container {
+            height: unset;
+            padding: 5rem 0;
+        }
+        &__section {
+            width: 100%;
+            height: unset;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 4rem 0;
+
+            &-col {
+                width: 90%;
+            }
+
+            &-wrap {
+                flex-direction: column;
+                height: unset;
+            }
+        }
+
+        &__landing {
+            height: 100vh;
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+
+                &-col {
+                    height: fit-content;
+                    margin-top: 2rem;
+                }
+            }
+
+            &-subtitle {
+                font-size: 1rem;
+            }
+
+            &-title {
+                font-size: 3rem;
+                text-align: center;
+            }
+
+            &-cta {
+                margin: 2rem 0;
+            }
         }
     }
 }

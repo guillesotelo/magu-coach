@@ -57,7 +57,7 @@
 
         &-item {
             text-decoration: none;
-            color: #efb3a2;
+            color: #F7A072;
             transition: .3s;
             cursor: pointer;
             position: relative;
@@ -71,7 +71,7 @@
                 height: 2px;
                 bottom: 0;
                 left: 0;
-                background-color: #efb3a2;
+                background-color: #F7A072;
                 transform-origin: bottom right;
                 transition: transform 0.4s ease-out;
             }
@@ -146,6 +146,61 @@
                     animation: fade-in-menu .5s ease-in forwards;
                     box-shadow: -17px 26px 76px -48px rgba(0, 0, 0, 0.75);
                 }
+            }
+        }
+
+        &-svg {
+            height: 2rem;
+            filter: invert(49%) sepia(14%) saturate(1444%) hue-rotate(188deg) brightness(89%) contrast(77%);
+        }
+
+        &-sidebar {
+            position: fixed;
+            transform: translateX(150%);
+            transition: .4s;
+            width: 60vw;
+            height: 100vh;
+            right: 0;
+            top: 0;
+            background-color: white;
+            margin-top: 10vh;
+            border-left: 1px solid lightgray;
+
+            &--togled {
+                position: fixed;
+                transform: translateX(0);
+                width: 60vw;
+                transition: .4s;
+                right: 0;
+                top: 0;
+                height: 100vh;
+                background-color: white;
+                margin-top: 10vh;
+                border-left: 1px solid lightgray;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 640px) {
+    .header {
+        &__menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 0 !important;
+            margin-top: 2rem;
+        }
+
+        &__logo {
+            &-text {
+                font-size: 1rem;
+            }
+
+            &-img-iso {
+                height: 2rem;
             }
         }
     }

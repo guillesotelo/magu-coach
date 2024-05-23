@@ -864,7 +864,7 @@ export default function Booking({ }: Props) {
                                 selected={serviceData.startTime}
                                 value={serviceData.startTime || 'Seleccionar'}
                                 setSelected={value => setServiceData({ ...serviceData, startTime: value })}
-                                style={{ width: '28%' }}
+                                style={{ width: isMobile ? '' : '28%' }}
                                 maxHeight='20vh'
                             />
                             <Dropdown
@@ -873,7 +873,7 @@ export default function Booking({ }: Props) {
                                 selected={serviceData.endTime}
                                 value={serviceData.endTime || 'Seleccionar'}
                                 setSelected={value => setServiceData({ ...serviceData, endTime: value })}
-                                style={{ width: '28%' }}
+                                style={{ width: isMobile ? '' : '28%' }}
                                 maxHeight='20vh'
                             />
                             <InputField
@@ -882,7 +882,7 @@ export default function Booking({ }: Props) {
                                 updateData={updateServiceData}
                                 value={serviceData.price || ''}
                                 type='number'
-                                style={{ width: '20%' }}
+                                style={{ width: isMobile ? '' : '20%' }}
                             />
                             <Dropdown
                                 label='Es evento'
@@ -890,7 +890,7 @@ export default function Booking({ }: Props) {
                                 selected={serviceData.isEvent || false}
                                 setSelected={value => setServiceData({ ...serviceData, 'isEvent': value === 'Si' ? true : false })}
                                 value={serviceData.isEvent ? 'Si' : 'No'}
-                                style={{ width: '20%' }}
+                                style={{ width: isMobile ? '' : '20%' }}
                             />
                         </div>
                         <div className='booking__sidebar-event-row'>
@@ -1052,7 +1052,7 @@ export default function Booking({ }: Props) {
                                 updateData={updateEventData}
                                 value={eventData.price || ''}
                                 type='number'
-                                style={{ width: '20%' }}
+                                style={{ width: isMobile ? '' : '20%' }}
                             />
                             <Dropdown
                                 label='Máxima asistencia'
@@ -1199,7 +1199,7 @@ export default function Booking({ }: Props) {
                 defaultView="month"
                 style={{
                     height: "70vh",
-                    width: '60vw',
+                    width: isMobile ? '90vw' : '60vw',
                     // alignSelf: 'flex-start',
                     zIndex: 0,
                     filter: selected !== -1 || isNewBooking ? 'blur(10px)' : '',
