@@ -2,6 +2,7 @@
     &__container {
         height: 35rem;
         width: 24rem;
+        max-width: 90vw;
         background-color: white;
         border-radius: 1.5rem;
         overflow: hidden;
@@ -138,7 +139,7 @@
         border-radius: 1rem;
         overflow: hidden;
         height: 4rem;
-        width: 18rem;
+        width: 75%;
 
         &-emojis {
             height: 2rem;

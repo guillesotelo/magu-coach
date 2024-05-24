@@ -21,10 +21,25 @@ export default function Home({ }: Props) {
     setTimeout(() => setShowWhatsapp(true), 3000)
   }, [])
 
+  useEffect(() => {
+    const body = document.querySelector('body')
+    if (body) {
+      if (showChat) body.style.overflow = 'hidden'
+      else body.style.overflow = 'auto'
+    }
+  }, [showChat])
+
   const renderHome = () => {
     return (
       <div className='page__row'>
-        <div className='home__container' style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover' }}>
+        <div
+          className='home__container'
+          style={{
+            backgroundImage: `url(${BG})`,
+            backgroundSize: 'cover',
+            filter: showChat ? 'contrast(.3)' : 'contrast(1)',
+            overflow: showChat ? 'hidden' : '',
+          }}>
 
           <div className="home__section-wrap">
             <h2 className='page__title'>Servicios</h2>
