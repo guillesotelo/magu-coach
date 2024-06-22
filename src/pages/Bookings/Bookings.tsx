@@ -598,7 +598,7 @@ export default function Booking({ }: Props) {
             <Modal
                 title={
                     isNewBooking && !data.serviceName && !data.fullname ? 'Nueva reserva'
-                        : `${data.serviceName || bookingServiceSelected.name} - ${data.fullname}${bookingSelected._id ? ' (ID: ' + bookingSelected._id.substring(18) + ')' : ''}`
+                        : `${data.serviceName || bookingServiceSelected ? bookingServiceSelected.name : 'Sin Nombre'} - ${data.fullname || ''}${bookingSelected._id ? ' (ID: ' + bookingSelected._id.substring(18) + ')' : ''} `
                 }
                 onClose={discardChanges}>
                 {tryToRemove ?
@@ -751,7 +751,8 @@ export default function Booking({ }: Props) {
                             </div>
                             <div className="booking__no-edit-data">
                                 <h2 className="booking__data-label">{isNewBooking ? 'Precio final' : data.isPaid ? 'Precio pagado' : 'Precio total'}</h2>
-                                <h2 className="booking__data-value">{isNewBooking ? parsePrice(totalPrice) : parsePrice(data.totalPrice)}</h2>
+                                <h2 className="booking__data-value">{parsePrice(totalPrice)}</h2>
+                                {data.price !== bookingServiceSelected.price ? <p style={{ margin: 0, color: 'brown' }}>(El precio por unidad es distinto al de la fecha de la reserva)</p> : ''}
                             </div>
                             <div className="booking__row">
                                 <Dropdown
@@ -801,7 +802,7 @@ export default function Booking({ }: Props) {
 
     const renderServiceSidebar = () => {
         return (
-            <div className={`booking__sidebar-event ${dbServiceSelected !== -1 || isNewService ? 'show-sidebar' : 'hide-sidebar'}`}>
+            <div className={`booking__sidebar ${dbServiceSelected !== -1 || isNewService ? 'show-sidebar' : 'hide-sidebar'} `}>
                 <h4 className="booking__sidebar-title">{tryToRemoveService ? serviceData.name : 'Detalles del servicio'}</h4>
                 {tryToRemoveService ?
                     <div className="booking__sidebar-col">
@@ -952,7 +953,7 @@ export default function Booking({ }: Props) {
 
     const renderEventSidebar = () => {
         return (
-            <div className={`booking__sidebar-event ${eventSelected !== -1 || isNewEvent ? 'show-sidebar' : 'hide-sidebar'}`}>
+            <div className={`booking__sidebar - event ${eventSelected !== -1 || isNewEvent ? 'show-sidebar' : 'hide-sidebar'} `}>
                 <h4 className="booking__sidebar-title">{tryToRemoveEvent ? eventData.name : 'Detalles del evento'}</h4>
                 {tryToRemoveEvent ?
                     <div className="booking__sidebar-col">
@@ -1127,7 +1128,7 @@ export default function Booking({ }: Props) {
         return (
             <Modal
                 title='Mensajes enviados y recibidos'
-                subtitle={`${getDate(createdAt)} ${isToday ? '(HOY)' : ''}`}
+                subtitle={`${getDate(createdAt)} ${isToday ? '(HOY)' : ''} `}
                 onClose={() => setMessageSelected(-1)}>
                 <div className='messagemodal__contaienr'>
                     <div
@@ -1161,7 +1162,7 @@ export default function Booking({ }: Props) {
     }
 
     return <div className="booking__container">
-        <h1 className='page__title' style={{ margin: 0, filter: selected !== -1 || isNewBooking ? 'blur(10px)' : '' }}>Bookings</h1>
+        <h1 className='page__title' style={{ marginTop: '2rem', filter: selected !== -1 || isNewBooking ? 'blur(10px)' : '' }}>Administrador</h1>
         <div className="booking__cta-btns" style={{ filter: selected !== -1 || isNewBooking ? 'blur(10px)' : '' }}>
             <Dropdown
                 label='Vista'
