@@ -44,6 +44,11 @@
 
         &-img-iso {
             height: 3.5rem;
+            transition: .2s;
+
+            &:hover {
+                filter: invert(75%) sepia(38%) saturate(401%) hue-rotate(322deg) brightness(98%) contrast(90%);
+            }
         }
     }
 

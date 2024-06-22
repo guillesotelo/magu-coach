@@ -1,7 +1,7 @@
 .servicecard {
     &__container {
-        height: 25rem;
-        width: 15rem;
+        height: 28rem;
+        width: 18rem;
         border: 1px solid #00000053;
         border-radius: 1rem;
         transition: .3s;
@@ -9,7 +9,7 @@
         -ms-user-select: none;
         user-select: none;
         opacity: 0;
-        animation: fade-in-down 2s ease-in forwards;
+        animation: fade-in-down 1s ease-in forwards;
         background-color: #fff;
 
         &:hover {
@@ -29,6 +29,7 @@
     &__title {
         font-size: 1.2rem;
         width: 100%;
+        // font-weight: bold;
         margin: 0;
         text-align: center;
     }
@@ -39,7 +40,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         text-align: left;
-        -webkit-line-clamp: 6;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         margin: 0;
     }
@@ -57,5 +58,12 @@
             border: 1px solid #00000053;
 
         }
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        width: 100%;
     }
 }

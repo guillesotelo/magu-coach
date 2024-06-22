@@ -9,7 +9,7 @@ export default function Contact({ }: Props) {
             <div className="privacy__container" style={{ width: isMobile ? '95%' : '50%', margin: '2rem' }}>
                 <h1>Contacto</h1>
 
-                <p>Si tienes alguna pregunta o deseas agendar una cita, por favor no dudes en contactarnos. Estamos disponibles 24/7 para atender tus consultas.</p>
+                <p>Si tienes alguna pregunta o deseas agendar una cita, por favor no dudes en contactarnos.</p>
 
                 <h2>Información de Contacto</h2>
 

@@ -4,17 +4,20 @@ import { useHistory } from 'react-router-dom'
 import Whatsapp from '../../assets/icons/whatsapp.svg'
 import WhatsappChat from '../../components/WhatsappChat/WhatsappChat'
 import ServiceCard from '../../components/ServiceCard/ServiceCard'
+import { getAllServices } from '../../services'
 
 type Props = {}
 
 export default function Home({ }: Props) {
   const [showWhatsapp, setShowWhatsapp] = useState(false)
   const [showChat, setShowChat] = useState(false)
+  const [services, setServices] = useState<any>([])
   const history = useHistory()
   const message = 'Hola Agustina! Me gustaría ponerme en contacto contigo para conocer más sobre tus servicios.'
 
   useEffect(() => {
     setTimeout(() => setShowWhatsapp(true), 3000)
+    getServices()
   }, [])
 
   useEffect(() => {
@@ -24,6 +27,15 @@ export default function Home({ }: Props) {
       else body.style.overflow = 'auto'
     }
   }, [showChat])
+
+  const getServices = async () => {
+    try {
+      const allServices = await getAllServices()
+      if (allServices && Array.isArray(allServices)) setServices(allServices)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   const renderHome = () => {
     return (
@@ -36,27 +48,24 @@ export default function Home({ }: Props) {
             filter: showChat ? 'contrast(.3)' : 'contrast(1)'
           }}>
 
-          <div className="home__section-wrap">
-            <h2 className='page__title'>Servicios</h2>
-            <ServiceCard
-              image='https://www.danielalencina.com/wp-content/uploads/2019/07/coaching-ontologico-1.jpg'
-              title='Coaching Ontológico'
-              description='El Coaching Ontológico es un servicio de desarrollo personal y profesional que se centra en transformar la manera en que las personas interpretan y enfrentan su realidad. Mediante el uso del lenguaje, la gestión emocional y la conciencia corporal, se facilita que los clientes amplíen sus posibilidades y alcancen sus objetivos. A través de conversaciones profundas, preguntas poderosas y una escucha activa, se guía a los clientes para que identifiquen y superen creencias limitantes, desarrollen nuevas competencias y vivan de manera más coherente y efectiva. Este enfoque holístico promueve un autoconocimiento profundo y un cambio duradero en la vida de las personas.'
-              buttonLabel='Reservar'
-              handleButton={() => history.push('/new-booking?serviceId=664efdab7bd965baf98c585f')}
-              delay='1s'
-              handleReadMore={() => history.push('/services?serviceId=coaching-ontologico')}
-            />
-            <ServiceCard
-              image='https://eduka.occidente.co/wp-content/uploads/2022/10/Ventajas-de-la-carrera-de-Fonoaudiologia.jpg'
-              title='Fonoaudiología'
-              description='La fonoaudiología es una disciplina de la salud que estudia la comunicación humana y la discapacidad comunicativa, reconociendo los factores individuales, interpersonales y sociales de los individuos. Sus actividades no solo están centradas en identificar y tratar las deficiencias de los pacientes, sino también en la creación de métodos para la rehabilitación de las capacidades comunicativas del individuo. De igual forma, interviene en los procesos de prevención de dichas deficiencias y en la promoción del bienestar comunicativo, de la calidad de vida y de la inclusión social de las comunidades, poblaciones y sujetos.'
-              buttonLabel='Reservar'
-              handleButton={() => history.push('/new-booking?serviceId=664f21e7067722000c2aa2a4')}
-              delay='1.5s'
-              handleReadMore={() => history.push('/services?serviceId=fonoaudiologia')}
-            />
-          </div>
+          {services.length ?
+            <>
+              <h2 className='page__title' style={{ animation: 'fade-in-down 2s ease-in forwards' }}>Servicios</h2>
+              <div className="home__section-wrap">
+                {
+                  services.map((service: any, i: number) =>
+                    <ServiceCard
+                      image={service.image}
+                      title={service.title}
+                      description={service.description}
+                      buttonLabel='Reservar'
+                      handleButton={() => history.push(`/new-booking?serviceId=${service._id}`)}
+                      delay={`${(i + 1) + i / 2}s`}
+                      handleReadMore={() => history.push(`/services?serviceId=${service.name}`)}
+                    />
+                  )}
+              </div>
+            </> : ''}
         </div>
 
         {showWhatsapp ?

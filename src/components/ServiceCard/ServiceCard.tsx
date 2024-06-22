@@ -35,20 +35,22 @@ export default function ServiceCard(props: Props) {
                 {title ? <p className="servicecard__title">{title}</p> : ''}
                 {price ? <p className="servicecard__price">{price}</p> : ''}
                 {description ? <p className="servicecard__description">{description}</p> : ''}
-                <Button
-                    label={buttonLabel}
-                    handleClick={handleButton}
-                    bgColor='#efb3a2'
-                    style={{ width: '100%', borderRadius: '.7rem' }}
-                />
+                <div className="servicecard__btns">
+                    <Button
+                        label={buttonLabel}
+                        handleClick={handleButton}
+                        bgColor='#efb3a2'
+                        style={{ width: '100%', borderRadius: '.7rem' }}
+                    />
 
-                <Button
-                    label='Leer más'
-                    handleClick={handleReadMore}
-                    bgColor='transparent'
-                    textColor='#efb3a2'
-                    style={{ width: '100%', borderRadius: '.7rem' }}
-                />
+                    <Button
+                        label='Leer más'
+                        handleClick={handleReadMore}
+                        bgColor='transparent'
+                        textColor='#efb3a2'
+                        style={{ width: '100%', borderRadius: '.7rem' }}
+                    />
+                </div>
             </div>
         </div>
     )

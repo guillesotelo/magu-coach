@@ -232,10 +232,10 @@ export default function Booking({ }: Props) {
         }}
       >
         <div className="page__col booking__text-col" style={{ width: isMobile ? '90vw' : '' }}>
-          <h1 className='booking__title'>{service.name || 'Cargando Servicios...'}</h1>
-          <h2 className='booking__subtitle'>Reserva tu cita</h2>
+          <h1 className='booking__title'>Reserva tu cita</h1>
+          <h2 className='booking__subtitle'>{service.name || 'Cargando Servicios...'}</h2>
           <p className='booking__text'>
-            Completa el formulario con tus datos para asegurar tu consulta. Estamos aquí para ayudarte en tu viaje hacia el bienestar emocional y mental.
+            Completa el formulario con tus datos para asegurar la consulta.
           </p>
         </div>
         <div className="page__col">
@@ -297,7 +297,7 @@ export default function Booking({ }: Props) {
                 value={service}
                 setSelected={setService}
                 maxHeight='20vh'
-                objKey='name'
+                objKey='title'
               />
               <Dropdown
                 label='Sesiones'

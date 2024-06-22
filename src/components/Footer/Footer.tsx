@@ -5,6 +5,7 @@ import Youtube from '../../assets/icons/youtube.svg'
 import { useHistory } from 'react-router-dom'
 import { AppContext } from '../../AppContext'
 import { toast } from 'react-toastify'
+import { goToUrl } from '../../helpers'
 
 type Props = {}
 
@@ -32,9 +33,9 @@ export default function Footer({ }: Props) {
             </div>
             <div className="footer__col">
                 <div className="footer__social">
-                    <img onClick={() => history.push('/')} src={LinkedIn} alt="LinkedIn" className="footer__social-svg" />
-                    <img onClick={() => history.push('/')} src={Youtube} alt="Youtube" className="footer__social-svg" />
-                    <img onClick={() => history.push('/')} src={Instagram} alt="Instagram" className="footer__social-svg" />
+                    {/* <img onClick={() => history.push('/')} src={LinkedIn} alt="LinkedIn" className="footer__social-svg" /> */}
+                    {/* <img onClick={() => history.push('/')} src={Youtube} alt="Youtube" className="footer__social-svg" /> */}
+                    <img onClick={() => goToUrl('https://www.instagram.com/magu.coach/')} src={Instagram} alt="Instagram" className="footer__social-svg" />
                 </div>
             </div>
             <div className="footer__col">
