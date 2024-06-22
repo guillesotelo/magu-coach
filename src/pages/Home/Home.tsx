@@ -51,6 +51,7 @@ export default function Home({ }: Props) {
           {services.length ?
             <>
               <h2 className='page__title' style={{ animation: 'fade-in-down 2s ease-in forwards' }}>Servicios</h2>
+              <div style={{ borderBottom: '1px solid black', width: '40vw', marginTop: '1rem', animation: 'fade-in-up 2s ease-in forwards' }}></div>
               <div className="home__section-wrap">
                 {
                   services.map((service: any, i: number) =>
@@ -60,7 +61,7 @@ export default function Home({ }: Props) {
                       description={service.description}
                       buttonLabel='Reservar'
                       handleButton={() => history.push(`/new-booking?serviceId=${service._id}`)}
-                      delay={`${(i + 1) + i / 2}s`}
+                      delay={`${(i + 1)/2}s`}
                       handleReadMore={() => history.push(`/services?serviceId=${service.name}`)}
                     />
                   )}
